@@ -172,8 +172,8 @@ class TracingBuilder
     }
 
     /**
-     * True means the tracing system supports sharing a span ID between a {@link Span\Kind\CLIENT}
-     * and {@link Span\Kind\SERVER} span. Defaults to true.
+     * True means the tracing system supports sharing a span ID between a {@link \Yupao\Tracing\Zipkin\Kind\CLIENT}
+     * and {@link \Yupao\Tracing\Zipkin\Kind\SERVER} span. Defaults to true.
      *
      * <p>Set this to false when the tracing system requires the opposite. For example, if
      * ultimately spans are sent to Amazon X-Ray or Google Stackdriver Trace, you should set this to
