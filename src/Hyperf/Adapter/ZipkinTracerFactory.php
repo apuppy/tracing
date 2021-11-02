@@ -42,7 +42,7 @@ class ZipkinTracerFactory implements NamedFactoryInterface
         $this->clientFactory = $clientFactory;
     }
 
-    public function make(string $name): \OpenTracing\Tracer
+    public function make(string $name): \Yupao\Tracing\OpenTracing\Tracer
     {
         if (! empty($name)) {
             $this->prefix = "opentracing.tracer.{$name}.";

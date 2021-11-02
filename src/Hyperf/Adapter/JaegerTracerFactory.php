@@ -19,6 +19,9 @@ use Psr\Cache\CacheItemPoolInterface;
 use Psr\Log\LoggerInterface;
 use const Jaeger\SAMPLER_TYPE_CONST;
 
+/**
+ * @deprecated
+ */
 class JaegerTracerFactory implements NamedFactoryInterface
 {
     /**
@@ -48,7 +51,7 @@ class JaegerTracerFactory implements NamedFactoryInterface
         $this->cache = $cache;
     }
 
-    public function make(string $name): Tracer
+    public function make(string $name): \Yupao\Tracing\OpenTracing\Tracer
     {
         $this->prefix = "opentracing.tracer.{$name}.";
         [$name, $options] = $this->parseConfig();

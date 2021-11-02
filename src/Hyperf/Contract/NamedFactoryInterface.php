@@ -16,5 +16,5 @@ interface NamedFactoryInterface
     /**
      * Create the object from factory.
      */
-    public function make(string $name): \OpenTracing\Tracer;
+    public function make(string $name): \Yupao\Tracing\OpenTracing\Tracer;
 }
