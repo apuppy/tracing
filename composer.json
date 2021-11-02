@@ -2,7 +2,7 @@
     "name": "yupao/tracing",
     "description": "Customized tracing component based on openzipkin by Yupao",
     "type": "library",
-    "license": "GPLv3",
+    "license": "Apache-2.0",
     "autoload": {
         "psr-4": {
             "Yupao\\Tracing\\": "src/"
