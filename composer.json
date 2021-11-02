@@ -36,5 +36,10 @@
     "suggest": {
         "hyperf/event": "Required to use DbQueryExecutedListener.",
         "jonahgeorge/jaeger-client-php":"Required (^0.6) to use jaeger tracing."
+    },
+    "extra": {
+        "hyperf": {
+            "config": "Yupao\\Tracing\\ConfigProvider"
+        }
     }
 }
