@@ -31,11 +31,10 @@
         "hyperf/http-server": "~2.2.0",
         "ext-curl": "*",
         "ext-json": "*",
-        "ext-openssl": "*",
-        "eleme/thrift-php": "dev-master",
-        "jonahgeorge/jaeger-client-php": "dev-master"
+        "ext-openssl": "*"
     },
     "suggest": {
-        "hyperf/event": "Required to use DbQueryExecutedListener."
+        "hyperf/event": "Required to use DbQueryExecutedListener.",
+        "jonahgeorge/jaeger-client-php":"Required (^0.6) to use jaeger tracing."
     }
 }
