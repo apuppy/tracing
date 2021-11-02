@@ -6,7 +6,15 @@
     "autoload": {
         "psr-4": {
             "Yupao\\Tracing\\": "src/"
-        }
+        },
+        "files": [
+            "./src/Zipkin/Propagation/Id.php",
+            "./src/Zipkin/Timestamp.php",
+            "./src/Zipkin/Kind.php",
+            "./src/Zipkin/Tags.php",
+            "./src/Zipkin/Annotations.php",
+            "./src/Zipkin/SpanName.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
