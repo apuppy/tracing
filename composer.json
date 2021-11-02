@@ -13,7 +13,9 @@
             "./src/Zipkin/Kind.php",
             "./src/Zipkin/Tags.php",
             "./src/Zipkin/Annotations.php",
-            "./src/Zipkin/SpanName.php"
+            "./src/Zipkin/SpanName.php",
+            "./src/OpenTracing/Tags.php",
+            "./src/OpenTracing/Formats.php"
         ]
     },
     "autoload-dev": {
