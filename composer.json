@@ -8,6 +8,10 @@
             "Yupao\\Tracing\\": "src/"
         }
     },
+    "autoload-dev": {
+        "psr-4": {
+        }
+    },
     "authors": [
         {
             "name": "lihongde",
@@ -15,5 +19,23 @@
         }
     ],
     "minimum-stability": "dev",
-    "require": {}
+    "require": {
+        "php": ">=7.2",
+        "psr/http-message": "^1.0",
+        "hyperf/contract": "~2.2.0",
+        "hyperf/di": "~2.2.0",
+        "hyperf/guzzle": "~2.2.0",
+        "hyperf/utils": "~2.2.0",
+        "hyperf/rpc": "~2.2.0",
+        "hyperf/rpc-client": "^2.2",
+        "hyperf/http-server": "~2.2.0",
+        "ext-curl": "*",
+        "ext-json": "*",
+        "ext-openssl": "*",
+        "eleme/thrift-php": "dev-master",
+        "jonahgeorge/jaeger-client-php": "dev-master"
+    },
+    "suggest": {
+        "hyperf/event": "Required to use DbQueryExecutedListener."
+    }
 }
