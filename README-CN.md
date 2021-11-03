@@ -1,30 +1,30 @@
-English | [中文](./README-CN.md)
+[English](./README.md) | 中文
 
-# tracing
+# 链路追踪
 
-Customized tracing component based on openzipkin by Yupao
+鱼泡网基于openzipkin定制的链路追踪组件
 
-# quickstart
+# 快速开始
 
-## install dependency
+## 安装composer依赖
 
 ```shell
 composer require yupao/tracing
 ```
 
-## (optional) delete existing opentracing config file
+## (可选) 删除现有的opentracing配置文件
 
 ```shell
 rm -f {$project_dir}/config/autoload/opentracing.php
 ```
 
-## publish config file
+## 发布配置文件
 
 ```shell
 php bin/hyperf.php vendor:publish yupao/tracing
 ```
 
-## change aspect configuration
+## 更新aspect配置
 
 ```php
 # config/autoload/aspects.php
@@ -33,7 +33,7 @@ return [
 ];
 ```
 
-## middlewares configuration
+## 更新middlewares配置
 
 ```php
 # config/autoload/middlewares.php
@@ -44,14 +44,13 @@ return [
 ];
 ```
 
-# customization
+# 自定义
 
-## change customized trace header name
+## 更改自定义追踪的HTTP header头名称
 
-If you are using a customized HTTP header for tracing. In the project configuration .env file,
-set `CUSTOMIZED_TRACE_ID_NAME` to that name.
+如果您使用了自定义的HTTP头用于追踪。在项目配置.env文件中，将`CUSTOMIZED_TRACE_ID_NAME`设置为相应的HTTP头名称。
 
 ```
-# edit .env
+# 编辑.env
 CUSTOMIZED_TRACE_ID_NAME=x-request-id
 ```
