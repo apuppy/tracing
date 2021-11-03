@@ -15,7 +15,8 @@
             "./src/Zipkin/Annotations.php",
             "./src/Zipkin/SpanName.php",
             "./src/OpenTracing/Tags.php",
-            "./src/OpenTracing/Formats.php"
+            "./src/OpenTracing/Formats.php",
+            "./src/Support/Helpers.php"
         ]
     },
     "autoload-dev": {
