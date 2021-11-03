@@ -6,6 +6,7 @@ namespace Yupao\Tracing\Zipkin\Propagation;
 
 use Hyperf\HttpServer\Contract\RequestInterface;
 use Hyperf\Utils\ApplicationContext;
+use function Yupao\Tracing\Support\Helpers\getCustomizedTraceID;
 use function Yupao\Tracing\Zipkin\Propagation\Id\generateTraceIdWith128bits;
 use Yupao\Tracing\Zipkin\Propagation\SamplingFlags;
 use Yupao\Tracing\Zipkin\Propagation\Exceptions\InvalidTraceContextArgument;
@@ -111,8 +112,8 @@ final class TraceContext implements SamplingFlags
 
         $nextId = Id\generateNextId();
 
-        // Using req_id in HTTP header as system trace ID if exist.
-        $reqId = TraceContext::getReqId();
+        // Using customized trace ID in HTTP header as system trace ID if exist.
+        $reqId = getCustomizedTraceID();
         if (!empty($reqId)) {
             $traceId = $reqId;
         } else {
@@ -131,21 +132,6 @@ final class TraceContext implements SamplingFlags
             false,
             $usesTraceId128bits
         );
-    }
-
-    /**
-     * @deprecated
-     * @return string
-     */
-    public static function getReqId(): string
-    {
-        /** @var $request RequestInterface */
-        $request = ApplicationContext::getContainer()->get(RequestInterface::class);
-        $traceId = '';
-        if ($request->hasHeader('req_id')) {
-            $traceId = (string) $request->header('req_id', '');
-        }
-        return $traceId;
     }
 
     /**

@@ -9,13 +9,14 @@ use Hyperf\Utils\ApplicationContext;
 /**
  * @return string
  */
-function getReqId(): string
+function getCustomizedTraceID(): string
 {
+    $traceIDName = env('CUSTOMIZED_TRACE_ID_NAME', 'req_id');
     /** @var $request RequestInterface */
     $request = ApplicationContext::getContainer()->get(RequestInterface::class);
     $traceId = '';
-    if ($request->hasHeader('req_id')) {
-        $traceId = (string) $request->header('req_id', '');
+    if ($request->hasHeader($traceIDName)) {
+        $traceId = (string)$request->header($traceIDName, '');
     }
     return $traceId;
 }
